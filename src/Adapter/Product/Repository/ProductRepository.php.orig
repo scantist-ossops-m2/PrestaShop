@@ -429,7 +429,7 @@ class ProductRepository extends AbstractObjectModelRepository
             ->addGroupBy('p.id_product')
         ;
 
-        $dbSearchPhrase = sprintf('"%%%s%%"', pSQL($searchPhrase));
+        $dbSearchPhrase = sprintf('"%%%s%%"', $searchPhrase);
         $qb->where($qb->expr()->or(
             $qb->expr()->like('pl.name', $dbSearchPhrase),
 
